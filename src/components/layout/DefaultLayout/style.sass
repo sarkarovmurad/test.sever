@@ -1,0 +1,31 @@
+@import '/src/assets/sass/include/config'
+
+.base
+	height: 100%
+
+.template, .main
+	display: flex
+	flex-direction: column
+
+.template
+	min-height: 100%
+
+.main
+	+full-wrapper
+	padding-top: 20px
+	padding-bottom: 20px
+	align-items: flex-start
+	flex-grow: 1
+
+.h1
+	color: var(--headingColor)
+
+	+desktop
+		margin: 0 0 25px
+		font: 700 32px/130% $font
+	+tablet
+		margin: 0 0 20px
+		font: 700 28px/130% $font
+	+mobile
+		margin: 0 0 15px
+		font: 700 24px/130% $font

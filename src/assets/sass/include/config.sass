@@ -1,0 +1,121 @@
+@charset "UTF-8"
+
+// Шрифты на проекте
+$font: 'Roboto', sans-serif
+
+
+// Экраны
+// ======
+$desktop-lg: 1399
+$desktop: 1199
+$tablet: 991
+$mobile: 767
+$mobile-sm: 575
+
+$max-width: 1376px
+$min-width: 320px
+
+
+
+@mixin max-width($width)
+	@media only screen and (max-width: #{$width}px)
+		@content
+
+@mixin min-width($width)
+	@media only screen and (min-width: #{$width}px)
+		@content
+
+@mixin min-max-width($minWidth, $maxWidth)
+	@media only screen and (min-width: #{$minWidth}px) and (max-width: #{$maxWidth}px)
+		@content
+
+@mixin max-height($height)
+	@media only screen and (max-height: #{$height}px)
+		@content
+
+@mixin min-height($height)
+	@media only screen and (min-height: #{$height}px)
+		@content
+
+
+// Медиазапросы
+// ============
+// desktop >= 992px
+@mixin desktop()
+	+min-width($tablet+1)
+		@content
+// desktop-max >= 1200px
+@mixin desktop-max()
+	+min-width($desktop+1)
+		@content
+// 992px <= desktop-min <= 1199px
+@mixin desktop-min()
+	+min-max-width($tablet+1, $desktop)
+		@content
+
+// 768px <= tablet <= 991px
+@mixin tablet()
+	+min-max-width($mobile+1, $tablet)
+		@content
+
+// mobile <= 767px
+@mixin mobile()
+	+max-width($mobile)
+		@content
+// 576px <= mobile-max <= 767px
+@mixin mobile-max()
+	+min-max-width($mobile-sm+1, $mobile)
+		@content
+// mobile-min <= 575px
+@mixin mobile-min()
+	+max-width($mobile-sm)
+		@content
+
+// desktop-tablet >= 768px
+@mixin desktop-tablet()
+	+min-width($mobile+1)
+		@content
+// tablet-mobile <= 991px
+@mixin tablet-mobile()
+	+max-width($tablet)
+		@content
+// desktop-tablet-mobile-max
+@mixin desktop-tablet-mobile-max()
+	+min-width($mobile-sm+1)
+		@content
+
+@mixin full-wrapper()
+	margin: 0 auto
+	padding: 0 16px
+	max-width: $max-width
+	min-width: $min-width
+	width: 100%
+
+@mixin width($width)
+	max-width: $width
+	width: $width
+
+@mixin placeholder()
+	&::-webkit-input-placeholder
+		@content
+	&::-moz-placeholder
+		@content
+	&:-moz-placeholder
+		@content
+	&:-ms-input-placeholder
+		@content
+
+@mixin darkTheme()
+	\:global(.dark-theme) &
+		@content
+
+@mixin hiddenElement()
+	position: absolute
+	top: 0
+	left: 0
+	padding: 0
+	width: 0
+	height: 0
+	overflow: hidden
+	opacity: 0
+

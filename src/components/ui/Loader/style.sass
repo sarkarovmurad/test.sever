@@ -1,0 +1,26 @@
+@import '/src/assets/sass/include/config'
+
+.loader
+	display: inline-block
+	padding: 15px 40px 15px 20px
+	font: 20px/100% $font
+	color: var(--headingColor)
+	background: var(--sectionColor)
+	border: 1px solid var(--borderColor)
+	border-radius: 5px
+
+	&::after
+		content: '.'
+		animation: loaderDots infinite 1s
+		display: inline-block
+		width: 0
+
+@keyframes loaderDots
+	0%
+		content: ''
+	33%
+		content: '.'
+	67%
+		content: '..'
+	100%
+		content: '...'

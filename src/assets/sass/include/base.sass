@@ -1,0 +1,48 @@
+*, *::before, *::after
+	box-sizing: border-box
+
+html
+	height: 100%
+	-ms-text-size-adjust: 100%
+	-webkit-text-size-adjust: 100%
+
+body
+	display: block
+	height: 100%
+	position: relative
+	color: var(--textColor)
+	background-color: var(--bgColor)
+
+	+desktop
+		font: 16px/150% $font
+	+tablet-mobile
+		font: 14px/150% $font
+
+	&.open
+		overflow: hidden
+
+	& > div#__next
+		height: 100%
+
+b, strong
+	font-weight: 700
+
+i, em
+	font-style: italic
+
+a
+	color: var(--linkColor)
+
+	&, &:hover, &:active, &:focus
+		text-decoration: none
+	&:hover
+		color: var(--linkHoverColor)
+	&:active, &:focus
+		color: var(--linkActiveColor)
+
+
+// Запрет на "hover" при скроллинге страницы
+// =========================================
+.disable-hover, .disable-hover *
+	pointer-events: none !important
+

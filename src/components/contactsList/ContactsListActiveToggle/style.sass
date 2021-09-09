@@ -1,0 +1,47 @@
+@import '/src/assets/sass/include/config'
+
+.contacts-list-active-toggle
+	display: flex
+	align-items: center
+	font: 500 18px/100% $font
+	color: var(--textColor)
+	transition: color .2s ease-in-out
+
+	&--active .contacts-list-active-toggle__checkbox
+		opacity: 1
+		transform: scale(1)
+
+	+desktop
+
+		&:hover
+			color: white
+
+	&:focus
+		outline: none
+
+		.contacts-list-active-toggle__icon
+			box-shadow: 0 0 0 3px var(--focusColor)
+
+	&__icon
+		position: relative
+		display: block
+		margin-right: 10px
+		width: 24px
+		height: 24px
+		background-color: var(--bgColor)
+		border: 2px solid var(--borderColor)
+		border-radius: 3px
+		transition: box-shadow .2s ease-in-out
+
+	&__checkbox
+		position: absolute
+		top: 0
+		left: 0
+		right: 0
+		bottom: 0
+		background-size: 70%
+		background-repeat: no-repeat
+		background-position: center
+		opacity: 0
+		transform: scale(.5)
+		transition: opacity .2s ease-in-out, transform .2s ease-in-out

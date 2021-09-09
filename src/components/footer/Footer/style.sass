@@ -1,0 +1,30 @@
+@import '/src/assets/sass/include/config'
+
+.footer
+	color: var(--footerTextColor)
+	background-color: var(--footerBgColor)
+
+	+desktop-tablet
+		font: 500 18px/130% $font
+	+mobile
+		font: 500 16px/130% $font
+
+	&__grid
+		+full-wrapper
+
+		+desktop-tablet-mobile-max
+			display: flex
+			justify-content: space-between
+			padding-top: 20px
+			padding-bottom: 20px
+		+mobile-min
+			padding-top: 30px
+			padding-bottom: 30px
+			text-align: center
+
+	&__cell
+
+		+mobile-min
+
+			& + &
+				margin-top: 5px

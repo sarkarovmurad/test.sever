@@ -1,0 +1,25 @@
+@import '/src/assets/sass/include/config'
+
+.header
+
+	&, &__wrapper, &__grid
+
+		+desktop-tablet
+			height: 60px
+		+mobile
+			height: 50px
+
+	&__wrapper
+		position: fixed
+		top: 0
+		left: 0
+		right: 0
+		background-color: var(--headerColor)
+		border-bottom: 1px solid var(--borderColor)
+		z-index: 1
+
+	&__grid
+		+full-wrapper
+		display: flex
+		justify-content: space-between
+		align-items: center

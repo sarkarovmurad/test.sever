@@ -1,0 +1,19 @@
+@import '/src/assets/sass/include/config'
+
+.header-logo
+	display: flex
+	align-items: center
+
+	&__img
+		margin-right: 10px
+
+		+desktop-tablet
+			width: 40px
+		+mobile
+			width: 30px
+
+	&__text
+		+desktop-tablet
+			font: 700 24px/100% $font
+		+mobile
+			font: 700 22px/100% $font

@@ -1,0 +1,28 @@
+@import '/src/assets/sass/include/config'
+
+.header-contacts
+	display: flex
+
+	+desktop-tablet
+		font: 500 20px/100% $font
+		white-space: nowrap
+		transition: color .2s ease-in-out, transform .2s ease-in-out
+	+mobile
+		font-size: 0
+		transition: transform .2s ease-in-out
+
+	&:active
+		transform: scale(.95)
+
+	&__icon
+		background-size: contain
+		background-repeat: no-repeat
+		background-position: center
+
+		+desktop-tablet
+			margin-right: 10px
+			width: 24px
+			height: 24px
+		+mobile
+			width: 30px
+			height: 30px

@@ -1,0 +1,10 @@
+{
+    "singleQuote": true,
+    "trailingComma": "es5",
+    "tabWidth": 4,
+    "editor.formatOnSave": true,
+    "arrowParens": "avoid",
+    "length": 1,
+    "endOfLine": "lf",
+    "printWidth": 100
+}
